@@ -1,0 +1,41 @@
+main
+Step 1: Access csv DB to memory
+Step 2: Display banner, and greetings
+Step 3: Display Table db.stocks
+Step 4: If db.rents, exec handle_known_renals; Else exec handle_new_rentals
+Step 5: goto Step 1
+
+
+handle_new_rentals
+Step 1: Acess csv DB from memory to desired variables
+Step 2: Prompt user to select an ID of an available item in db.
+Step 3: entry = Acess specific entry from ID from within db.
+Strp 4: rental_qty = Prompt user qty of item to rent.
+Step 5: Reduce rental_qty from entry.qty
+Step 6: rental_unit_days = Prompt unit days(1=5 days) to rent.
+Step 7: total_price = Multiply entry.price, rental_qty, rental_unit_days
+Step 8: Display Invoice
+Step 9: Confirm new rental.
+Step 10: If want to rent, Prompt costumer's name, contact for the entry.
+Step 11: Commit new changes within memory to csv DB
+
+
+handle_known_rentals
+Step 1: Acess csv DB from memory to desired variables
+Step 2: Return nothing if rents.db is nothing.
+Step 3: for entry in rents.db, if today greater than entry.return_date, Prompt user if costumer respond, handle_late_return
+Step 4: Prompt if any of the item has been returned, handle_returns; Else handle_new_rentals
+
+
+handle_late_return
+Step 1: Acess csv DB from memory to desired variables
+Step 2: total_price = Multiply entry.price, entry.rental_unit_days, entry.rental_qty
+
+
+
+handle_early_return
+Step 1: Acess csv DB from memory to desired variables
+
+
+handle_returns
+Step 1: Acess csv DB from memory to desired variables
